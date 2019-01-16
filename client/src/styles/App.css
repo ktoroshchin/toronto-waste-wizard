@@ -1,0 +1,14 @@
+.nav{
+  height: 8em;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  color: white;
+}

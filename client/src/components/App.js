@@ -4,9 +4,9 @@ import Search from './Search';
 class App extends Component {
   render() {
     return (
-        <div className="main-conatainer">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-              Hello World
+        <div className="">
+          <nav className="nav">
+              <h1 className="header">Toronto Waste Lookup</h1>
           </nav>
           <Search/>
         </div>

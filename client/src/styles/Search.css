@@ -1,0 +1,49 @@
+.input{
+  height: 3em;
+  margin-right: 0.7em;
+}
+.fab.fa-sistrix{
+ transform: rotate(90deg);
+ color: white;
+ size: 10x;
+}
+.search-button{
+  border-radius: 5px;
+  background-color: #228B22;
+  border: 1px solid #228B22;
+  width: 3em;
+  box-shadow: none;
+}
+
+.search-results-row {
+  overflow-x: hidden;
+  height: 60vh;
+  margin: 1%;
+}
+
+.favourites-row-container {
+  margin: 1%;
+}
+
+.favourites-background-settings {
+  background-color: #fbfcfa;
+}
+
+.search-bar {
+  margin: 1%;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+}
+
+#title {
+  color: #228B22;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.icon-a {
+  margin-right: 2%;
+}

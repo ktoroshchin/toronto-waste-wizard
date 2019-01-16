@@ -1,5 +1,5 @@
 @import "./App.css";
-@import "./star_icon.css";
+@import "./Search.css";
 
 html {
   height: 100%;
@@ -25,3 +25,4 @@ code {
   height: 100%;
   width: 100%;
 }
+
