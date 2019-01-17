@@ -11,11 +11,6 @@ class DisplayData extends Component {
     exist: false,
   }
 
-//Passing favourited data from localStorage to ParentComponent
-  setData = (data) => {
-    this.props.onStarClick(data)
-  }
-
 //on componentdidmount i am checking if item exist in local storage and setting state to TRUE;
   componentDidMount(){
   let localStorageItems = JSON.parse(localStorage.getItem('favourites')) || [];
@@ -55,6 +50,10 @@ class DisplayData extends Component {
       this.setData(localStorage.getItem('favourites'))
   }
 }
+//Passing favourited data from localStorage to ParentComponent
+  setData = (data) => {
+    this.props.onStarClick(data)
+  }
 
   render(){
     const { title, body } = this.props;
@@ -66,14 +65,13 @@ class DisplayData extends Component {
         </div>
       )
     }
-
-    return(
-      <div className="row">
-          <div className="col-5" >{this.state.favourite ? <i onClick={this.toggleFavourite} style={{color: "#228B22"}} className="fas fa-star icon-a"></i> : <i onClick={this.toggleFavourite} style={{color: '#888'}} className="fas fa-star icon-a"></i>}{title}</div>
-          <div className="col-7">{parser(body)}</div>
-      </div>
-    )
-  }
+      return(
+        <div className="row">
+            <div className="col-5" >{this.state.favourite ? <i onClick={this.toggleFavourite} style={{color: "#228B22"}} className="fas fa-star icon-a"></i> : <i onClick={this.toggleFavourite} style={{color: '#888'}} className="fas fa-star icon-a"></i>}{title}</div>
+            <div className="col-7">{parser(body)}</div>
+        </div>
+      )
+    }
 }
 
 export default DisplayData;

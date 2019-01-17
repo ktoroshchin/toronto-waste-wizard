@@ -1,6 +1,5 @@
 .nav{
   height: 8em;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
   justify-content: center;

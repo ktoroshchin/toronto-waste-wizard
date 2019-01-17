@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DisplayData from './DisplayData';
-import Favourites from './Favourites';
+import DisplayData from './displayData';
+import Favourites from './favourites';
 let decode = require('decode-html');
 const url = "https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000"
 
