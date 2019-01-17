@@ -4,7 +4,7 @@
 
 ## Build a web app to search for waste items using the Toronto Waste Wizard database, and save frequently used ones.
 
-## Instructions
+### Instructions
 - Reproduce the design as provided in the screenshot, which displays example search results.
 - The data must be taken from the [Waste Wizard Lookup data (JSON)](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/#5ed40494-a290-7807-d5da-09ab6a56fca2).
 - Typing in the search field should *NOT* perform an API call.
