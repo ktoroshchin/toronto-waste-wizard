@@ -1,7 +1,8 @@
-#Web Engineer Challenge - Summer 2019
+# Web Engineer Challenge - Summer 2019
+[Deployed](https://toronto-waste-lookup02.herokuapp.com/)
 
 
-##Build a web app to search for waste items using the Toronto Waste Wizard database, and save frequently used ones.
+## Build a web app to search for waste items using the Toronto Waste Wizard database, and save frequently used ones.
 
 ## Instructions
 - Reproduce the design as provided in the screenshot, which displays example search results.
