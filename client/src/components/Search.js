@@ -87,8 +87,8 @@ class Search extends Component {
       <div className="main-container">
         <div className="row search-bar">
           <form onSubmit={this.searchData} className="form">
-            <input  onKeyDown={this.handleDeleteSearch} onChange={this.handleInput} className="form-control input" type="search" name="requestData" aria-label="Search"/>
-            <button className="search-button" type="submit"><i class="fab fa-sistrix fa-2x" data-fa-transform="rotate-180"></i></button>
+            <input  onKeyDown={this.handleDeleteSearch} onChange={this.handleInput} className="form-control input" type="search" name="requestData" placeholder="SEARCH..." aria-label="Search"/>
+            <button className="search-button" type="submit"><i className="fab fa-sistrix fa-2x" data-fa-transform="rotate-180"></i></button>
           </form>
         </div>
         <div className="search-results-row">
