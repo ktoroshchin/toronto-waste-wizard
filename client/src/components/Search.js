@@ -13,6 +13,16 @@ class Search extends Component {
     favouriteData: [],
   }
 
+
+  componentDidMount(){
+    let localStorageItems = JSON.parse(localStorage.getItem('favourites')) || [];
+    this.setState({
+      favouriteData: localStorageItems,
+    })
+  return true;
+  }
+
+
 //adding favourited data to state array and passing to child component later below
   onStarClick = (data) => {
     this.setState({
@@ -38,8 +48,9 @@ class Search extends Component {
       this.setState({
         isHidden: true,
       })
+    }
   }
-}
+
 
 //API call and decoding req.body
   searchData = (event) => {
@@ -52,23 +63,23 @@ class Search extends Component {
     })
       .then( obj => {
       let result = [];
-          obj.data.forEach( req => {
-            if(req.keywords.indexOf(requestData) !== -1){
-              let objBody = decode(req.body)
-                let newObj = {
-                  title: req.title,
-                  body: objBody,
-                }
-                result.push(newObj)
-              }
-            })
-            this.setState({
-              responseData: result,
-              isHidden: false,
-            })
-          })
-          .catch(error => console.log(error))
-        }
+      obj.data.forEach( req => {
+        if(req.keywords.indexOf(requestData) !== -1){
+          let objBody = decode(req.body)
+            let newObj = {
+              title: req.title,
+              body: objBody,
+            }
+            result.push(newObj)
+          }
+        })
+        this.setState({
+          responseData: result,
+          isHidden: false,
+        })
+      })
+      .catch(error => console.log(error))
+  }
 
 
   render () {
@@ -84,7 +95,7 @@ class Search extends Component {
           {this.state.responseData.map(({ title, body }, index) => {
             return (
               <div key={index}>
-                {!this.state.isHidden ? <DisplayData onStarClick={this.onStarClick}  index={index} title={title} body={body}></DisplayData> : null}
+                {!this.state.isHidden ? <DisplayData searchLocalStorage={this.searchLocalStorage} onStarClick={this.onStarClick}  index={index} title={title} body={body}></DisplayData> : null}
               </div>)})}
         </div>
         <div className="favourites-background-settings">

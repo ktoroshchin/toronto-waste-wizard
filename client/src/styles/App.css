@@ -4,11 +4,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+  background-image: linear-gradient(to right, #006699 , #008040);
 }
 
 .header {
   display: flex;
   justify-content: center;
   color: white;
+  font-weight: bold;
 }
