@@ -3,7 +3,6 @@ import axios from 'axios';
 import DisplayData from './displayData';
 import Favourites from './favourites';
 let decode = require('decode-html');
-const url = "https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000"
 
 class Search extends Component {
   state = {
@@ -32,12 +31,9 @@ class Search extends Component {
 
 //search "input" parameters
   handleInput = (event) => {
-    const target = event.target;
-    const name = target.name
-
-    if(target.value !== ""){
+    if(event.target.value === ""){
       this.setState({
-        [name]: target.value,
+        requestData: '',
       })
     }
   }
@@ -49,16 +45,33 @@ class Search extends Component {
         isHidden: true,
       })
     }
-  }
+}
+
+//submit on enter press
+  handleEnter = (event) => {
+    if (event.key === 'Enter' && event.target.value !== '') {
+      this.setState({
+        requestData: event.target.value,
+      })
+    }
+  };
+
+//submit on button click
+  handleClick = () => {
+      this.setState({
+        requestData: document.getElementsByClassName('input')[0].value,
+      })
+  };
 
 
 //API call and decoding req.body
   searchData = (event) => {
     event.preventDefault();
     let requestData = this.state.requestData;
+    if(requestData !== ''){
     axios({
       method: 'get',
-      url: `${url}`,
+      url: 'https://secure.toronto.ca/cc_sr_v1/data/swm_waste_wizard_APR?limit=1000',
       responseType: 'json'
     })
       .then( obj => {
@@ -79,6 +92,7 @@ class Search extends Component {
         })
       })
       .catch(error => console.log(error))
+    }
   }
 
 
@@ -87,8 +101,8 @@ class Search extends Component {
       <div className="main-container">
         <div className="row search-bar">
           <form onSubmit={this.searchData} className="form">
-            <input  onKeyDown={this.handleDeleteSearch} onChange={this.handleInput} className="form-control input" type="search" name="requestData" placeholder="SEARCH..." aria-label="Search"/>
-            <button className="search-button" type="submit"><i className="fab fa-sistrix fa-2x" data-fa-transform="rotate-180"></i></button>
+            <input onKeyPress={this.handleEnter} onKeyDown={this.handleDeleteSearch} onChange={this.handleInput} className="form-control input" type="search" name="requestData" placeholder="SEARCH..." aria-label="Search"/>
+            <button className="search-button" onClick={this.handleClick}  type="submit"><i className="fab fa-sistrix fa-2x"  data-fa-transform="rotate-180"></i></button>
           </form>
         </div>
         <div className="search-results-row">

@@ -36,6 +36,7 @@
 .form {
   display: flex;
   width: 100%;
+  /* position: fixed; */
 }
 
 #title {
