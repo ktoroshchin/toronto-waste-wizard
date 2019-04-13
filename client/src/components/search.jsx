@@ -101,7 +101,7 @@ class Search extends Component {
       <div className="main-container">
         <div className="row search-bar">
           <form onSubmit={this.searchData} className="form">
-            <input onKeyPress={this.handleEnter} onKeyDown={this.handleDeleteSearch} onChange={this.handleInput} className="form-control input" type="search" name="requestData" placeholder="SEARCH..." aria-label="Search"/>
+            <input onKeyPress={this.handleEnter} onKeyDown={this.handleDeleteSearch} onChange={this.handleInput} className="form-control input" type="search" name="requestData" placeholder="SEARCH...for metal, plastic, electonics etc " aria-label="Search"/>
             <button className="search-button" onClick={this.handleClick}  type="submit"><i className="fab fa-sistrix fa-2x"  data-fa-transform="rotate-180"></i></button>
           </form>
         </div>
@@ -114,7 +114,7 @@ class Search extends Component {
         </div>
         <div className="favourites-background-settings">
             <div className="favourites-row-container">
-              <div id="title">Favourites</div>
+              <div id="title">Favourites (click on star icon to add item to Favourites)</div>
                 {this.state.favouriteData.map(({ title, body }, index) => {
                   return (
                     <div key={index}>
